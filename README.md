@@ -2,7 +2,7 @@
 
 This is a demonstration site showing how to use GeoServer as the source of a type-ahead, based on [Twitter TypeAhead](https://twitter.github.io/typeahead.js/).
 
-The modifications to the Twitter demos are found in the `prepare` and `transform` functions:
+The modifications to the above Twitter demos, in order to use GeoServer as a data source, are found in the `prepare` and `transform` functions:
 
 ```
 // Initialize the Bloodhound engine
@@ -36,6 +36,8 @@ var bloodhoundEngine = new Bloodhound({
 });
 bloodhoundEngine.initialize();
 ```
+
+This approach works best when the GeoServer layer contains unique values (eg city or state names), so that multiple identical responses are not received while typing.
 
 See the demo at https://slead.github.io/GeoServer_TypeAhead/ which also shows how [Leaflet.js](https://leafletjs.com/) and [Tokenfield](http://sliptree.github.io/bootstrap-tokenfield) can be integrated.
 
